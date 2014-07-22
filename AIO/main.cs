@@ -387,6 +387,20 @@ namespace AIO
                 }
             }
         }
+        public void listgrief(CommandArgs args)
+        {
+            if (GriefLoc.Count == 0)
+            {
+                args.Player.SendInfoMessage("There currently isn't any reported grief");
+                return;
+            }
+            for (int i = 0; i < GriefLoc.Count; i++)
+            {
+                Report Re = GriefLoc[i];
+                args.Player.SendInfoMessage(string.Format("[{0}] {1} reported a grief at POS ({2},{3}) at {4}", (i + 1).ToString(), Re.Name, Re.X, Re.Y, Re.Date));
+            }
+
+        }
         public void checkgrief(CommandArgs args)
         {
             if (GriefLoc.Count == 0)
@@ -397,9 +411,13 @@ namespace AIO
             for (int i = 0; i < GriefLoc.Count; i++)
             {
                 Report Re = GriefLoc[i];
-                args.Player.Teleport(Re.X*16, Re.Y*16);
-                args.Player.SendInfoMessage(string.Format("Reported by: {0} at {1}", Re.Name, Re.Date));
-                GriefLoc.Remove(Re);
+                if (Re != null)
+                {
+                    args.Player.Teleport(Re.X * 16, Re.Y * 16);
+                    args.Player.SendInfoMessage(string.Format("Reported by: {0} at {1}", Re.Name, Re.Date));
+                    GriefLoc.Remove(Re);
+                    i = GriefLoc.Count;
+                }
             }
         }
         #endregion
@@ -415,9 +433,13 @@ namespace AIO
             for (int i = 0; i < HouseLoc.Count; i++)
             {
                 Report Re = HouseLoc[i];
-                args.Player.Teleport(Re.X*16, Re.Y*16);
-                args.Player.SendInfoMessage(string.Format("Reported by: {0} at {1}", Re.Name, Re.Date));
-                HouseLoc.Remove(Re);
+                if (Re != null)
+                {
+                    args.Player.Teleport(Re.X * 16, Re.Y * 16);
+                    args.Player.SendInfoMessage(string.Format("Reported by: {0} at {1}", Re.Name, Re.Date));
+                    HouseLoc.Remove(Re);
+                    i = HouseLoc.Count;
+                }
             }
         }
         public void building(CommandArgs args)
