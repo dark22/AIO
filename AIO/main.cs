@@ -83,6 +83,7 @@ namespace AIO
             #region report grief/building
             Commands.ChatCommands.Add(new Command("tshock.world.modify", reportgrief, "reportgrief") { AllowServer = false });
             Commands.ChatCommands.Add(new Command("aio.checkgrief", checkgrief, "checkgrief") { AllowServer = false });
+            Commands.ChatCommands.Add(new Command("aio.listgrief", listgrief, "listgrief"));
             Commands.ChatCommands.Add(new Command("aio.checkbuilding", checkbuilding, "checkbuilding") { AllowServer = false });
             Commands.ChatCommands.Add(new Command("tshock.world.modify", building, "building") { AllowServer = false });
             #endregion

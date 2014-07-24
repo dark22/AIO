@@ -8,3 +8,4 @@ C:\Users\Clay\Documents\GitHub\AIO\AIO\bin\Debug\HttpServer.dll
 C:\Users\Clay\Documents\GitHub\AIO\AIO\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Clay\Documents\GitHub\AIO\AIO\obj\Debug\AIO.dll
 C:\Users\Clay\Documents\GitHub\AIO\AIO\obj\Debug\AIO.pdb
+C:\Users\Clay\Documents\GitHub\AIO\AIO\obj\Debug\AIO.csprojResolveAssemblyReference.cache
